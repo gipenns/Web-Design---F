@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <title>
+            form login bootstrap
+        </title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <style>
+            body {
+    font-family: Times New Roman, sans-serif;
+    background-image: url(image/sunrise.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    width: 300px;
+    background-color: #f8f8f8;
+    margin: 0 auto;
+    margin-top: 200px;
+    padding: 38px;
+    border-radius: 5px;
+    opacity: 0.9;
+}
+.submit {
+    position: absolute;
+    left: 705px; 
+    top: 425px;
+}
+h2 {
+    text-align: center;
+}
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+        </style>
+    </head>
+    <body>
+        <div class="container">
+        <h2>Login Page</h2>
+        <form>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label"></label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter Username" required>
+              </div>
+              <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                  <label for="inputPassword6" class="col-form-label"></label>
+                </div>
+                <div class="col-auto">
+                  <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" placeholder="Enter Password">
+                </div>
+            <div class="submit">
+                <button type="button" class="btn btn-outline-info">Submit</button>
+            </div>
+        </form>
+        </div>
+    </body>
+</html>
