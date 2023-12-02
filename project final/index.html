@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <title>Kelompok 6</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- OwlCarouse css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+  <!-- OwlCarouse css -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+  <!-- jquery   -->
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+  <!-- jquery   -->
+
+</head>
+
+<body>
+  <section class="head" id="head">
+    <div class="container flex1">
+      <div class="logo">
+        <h2>Kelompok 6</h2>
+      </div>
+
+      <div class="search flex">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Search and hit enter....">
+        <select>
+          <option>All Category </option>
+          <option>Fashion </option>
+          <option>Electronics </option>
+          <option>Home & Garden </option>
+          <option>Gifts </option>
+          <option>Music </option>
+          <option>Health & Beauty </option>
+          <option>Pets </option>
+          <option>Baby Toys </option>
+        </select>
+      </div>
+
+      <div class="account">
+        <div class="icon">
+          <a href="kerangjang.html">
+            <img src="image/cart.png" width="35px">
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    window.onscroll = function() {
+      myFunction()
+    };
+
+    var header = document.getElementById("head");
+    var sticky = header.offsetTop;
+
+    function myFunction() {
+      if (window.pageYOffset > sticky) {
+        header.classList.add("sticky");
+      } else {
+        header.classList.remove("sticky");
+      }
+    }
+  </script>
+
+  <header>
+    <div class="container">
+      <div class="navigasi">
+        <div class="category flex">
+          <img src="image/kotak.png"/>
+          <select>
+            <option>Category </option>
+            <option>Fashion </option>
+            <option>Electronics </option>
+            <option>Home & Garden </option>
+            <option>Gifts </option>
+            <option>Music </option>
+            <option>Health & Beauty </option>
+            <option>Pets </option>
+            <option>Baby Toys </option>
+          </select>
+        </div>
+
+        <nav>
+          <ul id="menuitem">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="product.html">PRODUCTS</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="account.html">ACCOUNT</a></li>
+          </ul>
+        </nav>
+        <span class="fa fa-bars" onclick="menutoggle()"></span>
+      </div>
+    </div>
+  </header>
+
+  <nav class="navbar navbar-light bg-light navbar-expand d-md-none d-lg-none d-xl-none fixed-bottom">
+    <ul class="navbar-nav nav-justified w-100">
+      <li class="nav-item">
+        <a href="index.html" class="nav-link active">
+          <i class="fas fa-home"></i>
+          <span class="small d-block">HOME</span>
+        </a>
+      </li>
+     <li class="nav-item">
+        <a href="product.html" class="nav-link">
+          <i class="fas fa-edit"></i>
+          <span class="small d-block">PRODUCTS</span>
+        </a>
+      </li>
+     
+      <li class="nav-item">
+        <a href="about.html" class="nav-link">
+          <i class="fas fa-users"></i>
+          <span class="small d-block">ABOUT</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="account.html" class="nav-link">
+          <i class="fas fa-user"></i>
+          <span class="small d-block">ACCOUNT</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="kerangjang.html" class="nav-link">
+          <i class="far fa-shopping-bag"></i>
+          <span class="small d-block">KERANJANG</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function() {
+    // Saat halaman dimuat, sembunyikan navbar
+    $('.fixed-bottom').hide();
+
+    // Saat melakukan scrolling
+    $(window).scroll(function() {
+      // Jika telah melakukan scrolling sejauh 100 piksel atau lebih, tampilkan navbar
+      if ($(this).scrollTop() >= 100) {
+        $('.fixed-bottom').fadeIn(200); // Atur durasi fade sesuai kebutuhan
+      } else {
+        $('.fixed-bottom').fadeOut(200); // Atur durasi fade sesuai kebutuhan
+      }
+    });
+  });
+</script>
+
+  <script>
+    var menuitem = document.getElementById("menuitem");
+    menuitem.style.maxHeight = "0px";
+
+    function menutoggle() {
+      if (menuitem.style.maxHeight == '0px') {
+        menuitem.style.maxHeight = "200px"
+      } else {
+        menuitem.style.maxHeight = "0px"
+      }
+    }
+  </script>
+
+<section class="home_product">
+  <div class="container flex" align="center">
+    <div class="row">
+      <div class="col-lg-6 col-md-12">
+        <div class="box" style="height:  282px;">
+        <div class="right">
+          <div class="img">
+            <img src="image/home1.png" alt="">
+          </div>
+        </div>
+        </div>
+        <div class="right">
+          <div class="text">
+            <h5 align="Center">SPECIAL OFFER</h5>
+            <h2><span>Comfortable</span> Original Cotton Sneakers </h2>
+            <a href="product.html"><h6>SHOP NOW</h6></a>
+          </div>
+        </div>
+    </div>
+
+      <div class="col-lg-6 col-md-12">
+          <div class="box">
+          <div class="right">
+            <div class="img">
+              <img src="image/home2.png" alt="">
+            </div>
+          </div>
+          </div>
+          <div class="right">
+            <div class="text">
+              <h5 align="Center">SPECIAL OFFER</h5>
+              <h2><span>Minimalist</span> genuine Cotton jacket </h2>
+              <a href="product.html"><h6>SHOP NOW</h6></a>
+            </div>
+          </div>
+      </div>
+
+      <div class="col-lg-6 col-md-12">
+        <div class="box" style ="height: 361px;" >
+        <div class="left">
+          <div class="img">
+            <img src="image/home3.png" alt="" >
+          </div>
+        </div>
+        </div>
+        <div class="right">
+          <div class="text">
+            <h5>SPECIAL OFFER</h5>
+            <h2><span>stylish</span>  genuine comfy t-shirts </h2>
+            <a href="product.html"><h6>SHOP NOW</h6></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 col-md-12">
+        <div class="box" style="height: 360px;">
+        <div class="left">
+          <div class="img">
+            <img src="image/Ip14.jpg" alt="">
+          </div>
+        </div>
+        </div>
+        <div class="right">
+          <div class="text">
+            <h5>SPECIAL OFFER</h5>
+            <h2><span>Stunning</span> Smooth Performance </h2>
+            <a href="product.html"><h6>SHOP NOW</h6></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section class="flash Deals">
+    <div class="container mtop">
+      <div class="heading flex1">
+        <h2><i class="fas fa-bolt"></i> flash Deals</h2>
+      </div>
+
+
+      <div class="owl-carousel owl-theme">
+        <div class="item">
+          <div class="img">
+            <span>50% off</span>
+            <img src="image/flash-1.png" alt="">
+            <div class="view">
+              <i class="fas fa-eye"></i> <br>
+              <i class="far fa-heart"></i>
+            </div>
+          </div>
+
+          <div class="text">
+            <h5>Sepatu Olahraga</h5>
+            <div class="star flex">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+            </div>
+            <div class="price flex1">
+              <p> Rp.329.900<label> Rp.658.900</label></p>
+              <i class="fas fa-plus"></i>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="img">
+            <span>50% off</span>
+            <img src="image/flash-2.png" alt="">
+            <div class="view">
+              <i class="fas fa-eye"></i> <br>
+              <i class="far fa-heart"></i>
+            </div>
+          </div>
+
+          <div class="text">
+            <h5>Smart Watch Fossil</h5>
+            <div class="star flex">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+            </div>
+            <div class="price flex1">
+              <p> Rp.899.900<label> Rp.1.800.000</label></p>
+              <i class="fas fa-plus"></i>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="img">
+            <span>50% off</span>
+            <img src="image/flash-4.png" alt="">
+            <div class="view">
+              <i class="fas fa-eye"></i> <br>
+              <i class="far fa-heart"></i>
+            </div>
+          </div>
+
+          <div class="text">
+            <h5>Smart Watch Black</h5>
+            <div class="star flex">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+            </div>
+            <div class="price flex1">
+              <p> Rp.2.100.000<label> Rp.3.000.000</label></p>
+              <i class="fas fa-plus"></i>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="img">
+            <span>50% off</span>
+            <img src="image/flash-3.png" alt="">
+            <div class="view">
+              <i class="fas fa-eye"></i> <br>
+              <i class="far fa-heart"></i>
+            </div>
+          </div>
+
+          <div class="text">
+            <h5>iPhone 14 pro</h5>
+            <div class="star flex">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+            </div>
+            <div class="price flex1">
+              <p> Rp.5.000.000<label> Rp.10.000.000</label></p>
+              <i class="fas fa-plus"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- OwlCarouse js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"></script>
+  <!-- OwlCarouse js -->
+
+
+  <script>
+    $('.owl-carousel').owlCarousel({
+      loop: true,
+      margin: 20,
+      nav: true,
+      dots: false,
+      navText: ["<i class='far fa-arrow-left'></i>", "<i class='far fa-arrow-right'></i>"],
+      responsive: {
+        511: {
+          items: 1
+        },
+        768: {
+          items: 2
+        },
+        1000: {
+          items: 4
+        }
+      }
+    })
+  </script>
+
+  <section class="flash new_arrivals Deals">
+    <div class="container mtop">
+      <div class="heading flex1">
+        <h2 class="flex">
+          <img src="https://img.icons8.com/color-glass/48/000000/new.png" />
+        </h2>
+      </div>
+
+      <div class="owl-carousel owl-carousel2 owl-theme">
+        <div class="item">
+          <div class="img">
+            <img src="image/new1.png" alt="">
+          </div>
+          <div class="text">
+            <h5>Sunglass</h5>
+            <p>Rp.259.900</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="img">
+            <img src="image/new2.png" alt="">
+          </div>
+          <div class="text">
+            <h5>Cushion</h5>
+            <p>Rp.379.900</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="img">
+            <img src="image/new3.png" alt="">
+          </div>
+          <div class="text">
+            <h5>Smart Watch</h5>
+            <p>Rp.249.900</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="img">
+            <img src="image/new4.png" alt="">
+          </div>
+          <div class="text">
+            <h5>Lipstick</h5>
+            <p>Rp.199.900</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="img">
+            <img src="image/Sepatu_Adidas_V_Racer_Classic.png" alt="">
+          </div>
+          <div class="text">
+            <h5><br><br>Sepatu Adidas V Racer Classic</h5>
+            <p>Rp.140.000</p>
+          </div>
+        </div>        
+        <div class="item">
+          <div class="img">
+            <img src="image/Sepatu_Sport_Casual_Puma_Easy_Rider.png" alt="">
+          </div>
+          <div class="text">
+            <h5><br><br><br>Sepatu Sport Casual Puma Easy Rider</h5>
+            <p>Rp.560.000</p>
+          </div>
+        </div>
+  </section>
+
+  <script>
+    $('.owl-carousel2').owlCarousel({
+      loop: true,
+      margin: 20,
+      nav: true,
+      dots: false,
+      navText: ["<i class='far fa-arrow-left'></i>", "<i class='far fa-arrow-right'></i>"],
+      responsive: {
+        511: {
+          items: 1
+        },
+        768: {
+          items: 4
+        },
+        1000: {
+          items: 6
+        }
+      }
+    })
+  </script>
+
+  <section class="flash new_arrivals deal mtop">
+    <div class="container">
+      <div class="heading">
+        <h2>Deal Of The Week</h2>
+      </div>
+
+      <div class="owl-carousel owl-carousel3 owl-theme">
+        <div class="item">
+          <div class="box flex1">
+            <div class="left">
+              <div class="img">
+                <span>50% OFF</span>
+                <img src="image/d1.png" alt="">
+                <h5>Sunglass</h5>
+              </div>
+            </div>
+            <div class="right">
+              <div class="img">
+                <span>50% OFF</span>
+                <img src="image/d2.png" alt="">
+                <h5>Nike Wmns</h5>
+              </div>
+            </div>
+          </div>
+          <div class="box flex1">
+            <div class="left">
+              <div class="img">
+                <span>50% OFF</span>
+                <img src="image/d3.png" alt="">
+                <h5>Smart Watch</h5>
+              </div>
+            </div>
+            <div class="right">
+              <div class="img">
+                <span>50% OFF</span>
+                <img src="image/d4.png" alt="">
+                <h5>Parfume</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="box flex1">
+            <div class="left">
+              <div class="img">
+                <span>50% OFF</span>
+                <img src="image/d1.png" alt="">
+                <h5>Sunglasses</h5>
+              </div>
+            </div>
+            <div class="right">
+              <div class="img">
+                <span>50% OFF</span>
+                <img src="image/d2.png" alt="">
+                <h5>Nike Wmns</h5>
+              </div>
+            </div>
+          </div>
+          <div class="box flex1">
+            <div class="left">
+              <div class="img">
+                <span>50% OFF</span>
+                <img src="image/d3.png" alt="">
+                <h5>Smart Watch</h5>
+              </div>
+            </div>
+            <div class="right">
+              <div class="img">
+                <span>50% OFF</span>
+                <img src="image/d4.png" alt="">
+                <h5>Parfume</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+  </section>
+
+  <script>
+    $('.owl-carousel3').owlCarousel({
+      loop: true,
+      margin: 20,
+      nav: true,
+      dots: false,
+      navText: ["<i class='far fa-arrow-left'></i>", "<i class='far fa-arrow-right'></i>"],
+      items: 1,
+    })
+  </script>
+
+  <section class="flash trending">
+    <div class="container mtop">
+      <div class="heading flex1">
+        <h2>Trending Items</h2>
+      </div>
+
+      <div class="content flex">
+        <div class="left_one">
+          <div class="item">
+            <div class="img">
+              <img src="image/t1.png" alt="">
+            </div>
+
+            <div class="text top">
+              <h5>Smart Watch Black</h5>
+              <div class="star flex">
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+              <div class="price flex1">
+                <p> Rp. 849.900 </p>
+                <i class="fas fa-plus"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="right_one">
+          <div class="item">
+            <div class="img">
+              <span>50% off</span>
+              <img src="image/t2.png" alt="">
+              <div class="view">
+                <i class="fas fa-eye"></i> <br>
+                <i class="far fa-heart"></i>
+              </div>
+            </div>
+
+            <div class="text">
+              <h5>Nike X Stranger Things</h5>
+              <div class="star flex">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+              <div class="price flex1">
+                <p> Rp. 1.250.000 <label><br>Rp. 2.500.000</label></p>
+                <i class="fas fa-plus"></i>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="img">
+              <span>50% off</span>
+              <img src="image/t3.png" alt="">
+              <div class="view">
+                <i class="fas fa-eye"></i> <br>
+                <i class="far fa-heart"></i>
+              </div>
+            </div>
+
+            <div class="text">
+              <h5>Nike Wmns</h5>
+              <div class="star flex">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+              <div class="price flex1">
+                <p> Rp.849.000<label><br> Rp. 1.698.000</label></p>
+                <i class="fas fa-plus"></i>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="img">
+              <span>50% off</span>
+              <img src="image/t4.png" alt="">
+              <div class="view">
+                <i class="fas fa-eye"></i> <br>
+                <i class="far fa-heart"></i>
+              </div>
+            </div>
+
+            <div class="text">
+              <h5>New Balance 6 mens</h5>
+              <div class="star flex">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+              <div class="price flex1">
+                <p> Rp. 349.500<label><br>Rp. 699.000</label></p>
+                <i class="fas fa-plus"></i>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="img">
+              <span>50% off</span>
+              <img src="image/t5.png" alt="">
+              <div class="view">
+                <i class="fas fa-eye"></i> <br>
+                <i class="far fa-heart"></i>
+              </div>
+            </div>
+
+            <div class="text">
+              <h5>Adidas Nizza Pride</h5>
+              <div class="star flex">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+              <div class="price flex1">
+                <p> Rp. 399.500 <label> Rp. 799.000</label></p>
+                <i class="fas fa-plus"></i>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="img">
+              <span>50% off</span>
+              <img src="image/t6.png" alt="">
+              <div class="view">
+                <i class="fas fa-eye"></i> <br>
+                <i class="far fa-heart"></i>
+              </div>
+            </div>
+
+            <div class="text">
+              <h5>Air Jordan 1 High Taxi</h5>
+              <div class="star flex">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+              <div class="price flex1">
+                <p> Rp. 1.900.000<label> Rp.3.800.000</label></p>
+                <i class="fas fa-plus"></i>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="img">
+              <span>50% off</span>
+              <img src="image/t7.png" alt="">
+              <div class="view">
+                <i class="fas fa-eye"></i> <br>
+                <i class="far fa-heart"></i>
+              </div>
+            </div>
+
+            <div class="text">
+              <h5>HUMTTO</h5>
+              <div class="star flex">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+              <div class="price flex1">
+                <p> Rp. 1.100.000 <label><br> Rp. 2.100.000</label></p>
+                <i class="fas fa-plus"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="delivery mtop">
+    <div class="container">
+      <div class="content grid">
+        <div class="box flex">
+          <div class="img">
+            <i class="far fa-shipping-fast"></i>
+          </div>
+          <div class="text">
+            <h3>Free Delivery</h3>
+            <span>Order over</span>
+          </div>
+        </div>
+        <div class="box flex">
+          <div class="img">
+            <i class="far fa-money-check-alt"></i>
+          </div>
+          <div class="text">
+            <h3>Money Gurantee </h3>
+            <span>7 Days Back </span>
+          </div>
+        </div>
+        <div class="box flex">
+          <div class="img">
+            <i class="far fa-stopwatch"></i>
+          </div>
+          <div class="text">
+            <h3>365 Days </h3>
+            <span>For free return </span>
+          </div>
+        </div>
+        <div class="box flex">
+          <div class="img">
+            <i class="far fa-credit-card"></i>
+          </div>
+          <div class="text">
+            <h3>Payment </h3>
+            <span>Secure System </span>
+          </div>
+        </div>
+        <div class="box flex">
+          <div class="img">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <div class="text">
+            <h3>Online support </h3>
+            <span>24/7 </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="newsletter top">
+    <div class="container">
+      <i class="far fa-paper-plane"></i>
+      <h2>Subscribe To Our Newsletter</h2>
+      <p>and receive $20 coupon for the first Shopping</p>
+      <div class="input flex1">
+        <input type="text" placeholder="Enter Your Email Here...">
+        <button>Subscribe</button>
+      </div>
+    </div>
+    <hr class="bg-light" />
+  </section>
+
+  <footer>
+    <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-6">
+      <div class="item">
+        <div class="logo">
+          <h2>Kelompok 6</h2>
+        </div>
+        <div class="box flex1">
+          <div class="app flex">
+            <div class="img">
+              <img src="https://img.icons8.com/color/48/000000/google-play.png" />
+            </div>
+            <div class="text">
+              <small>Get it on</small>
+              <span>Google Play</span>
+            </div>
+          </div>
+          <div class="app flex">
+            <div class="img">
+              <img src="https://img.icons8.com/color/48/000000/apple-app-store--v3.png" />
+            </div>
+            <div class="text">
+              <small>Get it on</small>
+              <span>App Store</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+      <div class="item">
+        <h3>Customer Care</h3>
+        <ul>
+          <li> Help Center</li>
+          <li>How to Buy</li>
+          <li> Track Your Order</li>
+          <li> Corporate & Bulk Purchasing</li>
+          <li> Returns & Refunds</li>
+        </ul>
+      </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="item">
+          <h3>Contact Us</h3>
+          <ul>
+            <li>Airmadidi, Sulawesi Utara, 58218, Indonesia</li>
+            <li>Email: kelompok6@gmail.com</li>
+            <li>Phone: 08123456789</li>
+          </ul>
+          <div class="icon flex">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-youtube"></i>
+            <i class="fab fa-google"></i>
+            <i class="fab fa-instagram"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
